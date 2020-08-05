@@ -3,8 +3,9 @@
 #galoppen game written in python with pygame
 #TODO: 
 
-import pygame, sys, serial
+import pygame, sys, serial, array
 from pygame.locals import *
+from pygame import *
 
 #serial things
 port = "/dev/ttyACM0"
@@ -29,16 +30,31 @@ BLUE = (0, 0, 255)
 
 gameWindow.fill(WHITE)
 
-#horse init
-position = 50
+#horse/hole init
+#position = 50
 #pygame.draw.rect(gameWindow, RED, (50, 50, 50, position))
 
-pygame.draw.circle(gameWindow, YELLOW, (400, 550), 20, 4)
+YellowX = [400, 350, 450, 300, 500, 250, 550]
+YellowY = [550, 500, 500, 450, 450, 400, 400]
+BlueX = [400, 350, 450, 300, 500, 250, 550]
+BlueY = [500, 450, 450, 400, 400, 350, 350]
+RedX = [400, 400]
+RedY = [450, 400]
+
+#Yellow and Blue Holes
+for x in range(7):
+    pygame.draw.circle(gameWindow, YELLOW, (YellowX[x], YellowY[x]), 20, 4)
+    pygame.draw.circle(gameWindow, BLUE, (BlueX[x], BlueY[x]), 20, 4)
+
+#Red Holes
+pygame.draw.circle(gameWindow, RED, (RedX[0], RedY[0]), 20, 4)
+pygame.draw.circle(gameWindow, RED, (RedX[1], RedY[1]), 20, 4)
 
 pygame.display.update()
 
+# main pygame loop
 while True:
-    for event in pygame.event.get():              
+    for event in pygame.event.get(): #TODO: fix broken quit
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
@@ -46,7 +62,7 @@ while True:
     tdata =s1.read()
     cdata =tdata.decode("utf-8")
         
-    # if serial read 1 (yellow hole); give 50 points
+    # if serial read 1 (yellow hole); blink yellow hole and beep
     if cdata == "0":
         tdata =s1.read()
         cdata =tdata.decode("utf-8")
@@ -61,18 +77,35 @@ while True:
         #position = position + 50
         #pygame.draw.rect(gameWindow, YELLOW, (50, 50, position, 50))
     
-    # if serial read 2 (blue hole); give 100 points
+    # if serial read 2 (blue hole); blink blue hole and beep
     if cdata == "1":
-        position = position + 100
-        pygame.draw.rect(gameWindow, BLUE, (50, 50, position, 50))
-        pygame.display.update()
+        tdata =s1.read()
+        cdata =tdata.decode("utf-8")
+        if cdata == "o":
+            pygame.draw.circle(gameWindow, BLUE, (400, 500), 20)
+            pygame.display.update()
+            pygame.mixer.Sound.play(beep)
+        else:
+            pygame.draw.circle(gameWindow, WHITE, (400, 500), 16)
+            pygame.display.update()
         
-    # if serial read 3 (red hole); give 200 points
+        #position = position + 100
+        #pygame.draw.rect(gameWindow, BLUE, (50, 50, position, 50))
+        
+    # if serial read 3 (red hole); blink 
     if cdata == "2":
-        position = position + 200
-        pygame.draw.rect(gameWindow, RED, (50, 50, position, 50))
-        pygame.display.update()
+        tdata =s1.read()
+        cdata =tdata.decode("utf-8")
+        if cdata == "o":
+            pygame.draw.circle(gameWindow, RED, (400, 450), 20)
+            pygame.display.update()
+            pygame.mixer.Sound.play(beep)
+        else:
+            pygame.draw.circle(gameWindow, WHITE, (400, 450), 16)
+            pygame.display.update()
         
+        #position = position + 200
+        #pygame.draw.rect(gameWindow, RED, (50, 50, position, 50))
 
 sys.exit()
             
