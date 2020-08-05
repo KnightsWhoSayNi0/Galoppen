@@ -20,4 +20,4 @@ Raspi receives controls via serial and display them as graphics.
 
 I'll add a circuit diagram once the basic circuit is moved off of the test breadboard and onto a prototyping breadboard.
 
-Thanks for cheching this out!
+Thanks for checking this out!
