@@ -5,8 +5,19 @@ Basically just using github to transfer files between computers.
 
 Feel free to use this if you happen to stumble upon it.
 
-Hardware specs:
+### Hardware specs:
+
 Using a raspi 3+ and a teensyduino 4.1.
+
+IR sensor used is a, "HiLetgo TCRT5000 Sensor Module".
+
+Also using an, "Anmbest AMS1117-3...4.75V-12V to 3.3V 800mA", to step down the 5 volts outputed by the teensy to 3.3.
+
+(Sorry for the weird names, just reading them off of the packaging.)
 
 Teensyduino controls i/o for ir prox sensors and leds.
 Raspi receives controls via serial and display them as graphics.
+
+I'll add a circuit diagram once the basic circuit is moved off of the test breadboard and onto a prototyping breadboard.
+
+Thanks for cheching this out!
