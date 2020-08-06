@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 #galoppen game written in python with pygame
-#TODO: 
+#TODO: Fix quit
 
 import pygame, sys, serial, array
 from pygame.locals import *
@@ -16,7 +16,9 @@ s1.flushInput()
 pygame.init()
 
 beep = pygame.mixer.Sound("beep.wav")
-#pygame.mixer.Sound.play(beep)
+highBeep = pygame.mixer.Sound("high.wav")
+mediumBeep = pygame.mixer.Sound("med.wav")
+lowBeep = pygame.mixer.Sound("low.wav")
 
 gameWindow = pygame.display.set_mode((800, 600), 0, 32)
 pygame.display.set_caption('Galoppen')
@@ -69,7 +71,7 @@ while True:
         if cdata == "o":
             pygame.draw.circle(gameWindow, YELLOW, (400, 550), 20)
             pygame.display.update()
-            pygame.mixer.Sound.play(beep)
+            pygame.mixer.Sound.play(lowBeep)
         else:
             pygame.draw.circle(gameWindow, WHITE, (400, 550), 16)
             pygame.display.update()
@@ -84,7 +86,7 @@ while True:
         if cdata == "o":
             pygame.draw.circle(gameWindow, BLUE, (400, 500), 20)
             pygame.display.update()
-            pygame.mixer.Sound.play(beep)
+            pygame.mixer.Sound.play(mediumBeep)
         else:
             pygame.draw.circle(gameWindow, WHITE, (400, 500), 16)
             pygame.display.update()
@@ -99,7 +101,7 @@ while True:
         if cdata == "o":
             pygame.draw.circle(gameWindow, RED, (400, 450), 20)
             pygame.display.update()
-            pygame.mixer.Sound.play(beep)
+            pygame.mixer.Sound.play(highBeep)
         else:
             pygame.draw.circle(gameWindow, WHITE, (400, 450), 16)
             pygame.display.update()
