@@ -1,0 +1,46 @@
+Old test-game.py detection code.
+
+# if serial read 1 (yellow hole); blink yellow hole and beep
+#    if cdata == "0":
+#        tdata =s1.read()
+#        cdata =tdata.decode("utf-8")
+#        if cdata == "o":
+#            pygame.draw.circle(gameWindow, YELLOW, (400, 550), 20)
+#            pygame.display.update()
+#            pygame.mixer.Sound.play(lowBeep)
+#        else:
+#            pygame.draw.circle(gameWindow, WHITE, (400, 550), 16)
+#            pygame.display.update()
+#        
+#        #position = position + 50
+#        #pygame.draw.rect(gameWindow, YELLOW, (50, 50, position, 50))
+#    
+#    # if serial read 2 (blue hole); blink blue hole and beep
+#    if cdata == "1":
+#        tdata =s1.read()
+#        cdata =tdata.decode("utf-8")
+#        if cdata == "o":
+#            pygame.draw.circle(gameWindow, BLUE, (400, 500), 20)
+#            pygame.display.update()
+#            pygame.mixer.Sound.play(mediumBeep)
+#        else:
+#            pygame.draw.circle(gameWindow, WHITE, (400, 500), 16)
+#            pygame.display.update()
+#        
+#        #position = position + 100
+#        #pygame.draw.rect(gameWindow, BLUE, (50, 50, position, 50))
+#        
+#    # if serial read 3 (red hole); blink 
+#    if cdata == "2":
+#        tdata =s1.read()
+#        cdata =tdata.decode("utf-8")
+#        if cdata == "o":
+#            pygame.draw.circle(gameWindow, RED, (400, 450), 20)
+#            pygame.display.update()
+#            pygame.mixer.Sound.play(highBeep)
+#        else:
+#            pygame.draw.circle(gameWindow, WHITE, (400, 450), 16)
+#            pygame.display.update()
+#        
+#        #position = position + 200
+#        #pygame.draw.rect(gameWindow, RED, (50, 50, position, 50))
