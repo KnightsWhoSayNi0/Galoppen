@@ -6,7 +6,7 @@ OP = optomized - remove unoptimized when finished
 
 // constants won't change:
 const long interval = 1000;           // interval at which to blink (milliseconds)
-const int maxPins = 2;                // 
+const int maxPins = 15;                // 
 
 // variables that change
 int LEDStates[maxPins+1];
@@ -51,7 +51,15 @@ void loop()
       if (sensorStates[i] == LOW) // triggered
       {
         triggerStates[i] = LOW; //LOW = LED ON
+        if (i<10)
+        {
+        Serial.print("0");
         Serial.print(i);
+        }
+        else
+        {
+        Serial.print(i); 
+        }
         Serial.print("o");
       }
     }
@@ -69,7 +77,15 @@ void loop()
         LEDStates[i] = HIGH;
         triggerStates[i] = HIGH;
         digitalWrite(i + 16, LEDStates[i]);
+        if (i<10)
+        {
+        Serial.print("0");
         Serial.print(i);
+        }
+        else
+        {
+        Serial.print(i); 
+        }
         Serial.print("f");
       }
     }
