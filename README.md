@@ -1,15 +1,15 @@
 # Galoppen
 Code for a galoppen game based of of a carnival game from Tivoli Gardens.
-
 Basically just using github to transfer files between computers.
+Feel free to use this if you happen to stumble upon it
 
-Feel free to use this if you happen to stumble upon it.
+Ok so I really havent been updating this readme.
 
 ### Hardware specs:
 
 Using a raspi 3+ and a teensyduino 4.1.
 
-IR sensor used is a, "HiLetgo TCRT5000 Sensor Module".
+(using a different sensor now)
 
 Also using an, "Anmbest AMS1117-3...4.75V-12V to 3.3V 800mA", to step down the 5 volts outputed by the teensy to 3.3.
 
