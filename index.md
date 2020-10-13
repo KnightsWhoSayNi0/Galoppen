@@ -3,14 +3,14 @@ This site doesn't really do anything, I just wanted to screw around with github 
 
 Heres a copy of the README.md on github:
 
-# Galoppen
+### Galoppen
 Code for a galoppen game based of of a carnival game from Tivoli Gardens.
 Basically just using github to transfer files between computers.
 Feel free to use this if you happen to stumble upon it
 
 Ok so I really havent been updating this readme.
 
-### Hardware specs:
+#### Hardware specs:
 
 <img src="https://i.imgur.com/1AqRSxu.png" alt="PCB Diagram" width="400"/>
 
@@ -25,9 +25,9 @@ Also using an, "Anmbest AMS1117-3...4.75V-12V to 3.3V 800mA", to step down the 5
 Teensyduino controls i/o for ir prox sensors and leds.
 Raspi receives controls via serial and display them as graphics.
 
-### Updates
+#### Updates
 
  Made models for the game itself, will post later.
  FYI, the models were made in FreeCAD
 
-##### Thanks for checking this out!
+#### Thanks for checking this out!
