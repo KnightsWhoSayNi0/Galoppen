@@ -7,7 +7,7 @@ Ok so I really havent been updating this readme.
 
 ### Hardware specs:
 
-![PCB Diagram](https://i.imgur.com/1AqRSxu.png)
+<img src="https://i.imgur.com/1AqRSxu.png" alt="PCB Diagram" width="400"/>
 
 Using a raspi 3+ and a teensyduino 4.1.
 
