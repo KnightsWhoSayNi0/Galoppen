@@ -7,9 +7,11 @@ Ok so I really havent been updating this readme.
 
 ### Hardware specs:
 
+![PCB Diagram](https://i.imgur.com/1AqRSxu.png)
+
 Using a raspi 3+ and a teensyduino 4.1.
 
-(using a different sensor now)
+(using a different sensor now i cant remember what it is and ill look it up later)
 
 Also using an, "Anmbest AMS1117-3...4.75V-12V to 3.3V 800mA", to step down the 5 volts outputed by the teensy to 3.3.
 
